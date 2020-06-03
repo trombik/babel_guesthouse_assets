@@ -164,7 +164,7 @@ jobs:
           URLS=""
           for D in ${CHANGED_VIDEO_DIRS}; do
             for L in in en ja; do
-              URLS="- [${L}] ${BASE_URL}/${D}/${L}.mp4\n ${URLS}"
+              URLS="- [${L}.mp4](${BASE_URL}/${D}/${L}.mp4)\n ${URLS}"
             done
           done
           echo "::set-output name=URLS::${URLS}"
