@@ -66,6 +66,10 @@ jobs:
             if [ "${FIRST_DIR}" != "video" ]; then
               continue
             fi
+            # if the change is NOT subdirectory, skip it
+            if [ "${DIR}" == "video" ]; then
+              continue
+            fi
             fmake -C "${DIR}" -m .../Mk all
           done
 
