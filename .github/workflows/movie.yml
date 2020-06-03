@@ -38,6 +38,7 @@ jobs:
   deploy_to_s3:
     name: Deploy video files to S3
     needs: check_changed_files
+    if: needs.check_changed_files.outputs.result == true
     runs-on: ubuntu-latest
     steps:
       - name: See needs.check_changed_files.outputs.result
