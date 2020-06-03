@@ -24,10 +24,16 @@ jobs:
 
           # set the output to true if files include any files under `video`
           for F in ${CHANGED_FILES}; do
-            first_dir=`echo ${F} | cut -d'/' -f1`
-            if [ $first_dir == "video" ]; then
-              echo "::set-output name=result::true"
+            FIRST_DIR=`echo ${F} | cut -d'/' -f1`
+            SECOND_DIR=`echo ${F} | cut -d'/' -f2`
+            if [ ${FIRST_DIR} != "video" ]; then
+              continue
             fi
+            # if the change is NOT subdirectory, skip it
+            if [ ! -d "${SECOND_DIR}" ]; then
+              continue
+            fi
+            echo "::set-output name=result::true"
           done
   deploy_to_s3:
     name: Deploy video files to S3
