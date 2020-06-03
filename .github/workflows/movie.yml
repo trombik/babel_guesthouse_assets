@@ -125,7 +125,7 @@ jobs:
           echo "Destroying previously created bucket"
           # `aws s3 rb` only works if versioning is NOT enabled
           # https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-or-empty-bucket.html#delete-bucket-awscli
-          aws s3 rb "s3://${BUCKET_NAME}" --force
+          aws s3 rb "s3://${BUCKET_NAME}" --force || true
           echo "Creating S3 bucket: ${BUCKET_NAME}"
           aws s3api create-bucket \
             --bucket "${BUCKET_NAME}" \
