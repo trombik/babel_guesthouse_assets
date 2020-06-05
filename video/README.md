@@ -48,3 +48,36 @@ it's about yourself, `About_Me`. Do NOT use spaces in directory name.
 1. Create English version of `.ass` file. The file name MUST be `en.ass`.
 
 That's it!
+
+## Translating subtitles
+
+You can help our translation work. This section describes how.
+
+### Requirements
+
+Before translating, the following requirements must be met.
+
+- You have `git` installed on your local machine
+  (download `git` from https://git-scm.com/downloads, and follow the
+  instruction at [Setting up Git](https://help.github.com/en/github/getting-started-with-github/set-up-git#setting-up-git))
+- A text editor (`vim`, `emacs`, `notepad.exe`, etc). If you don't have one,
+  [Atom editor](https://flight-manual.atom.io/getting-started/sections/installing-atom/)
+  is recommended.
+- GitHub account (if you don't have one, [create one](https://github.com/join))
+
+### Workflow of translation
+
+Here is the workflow of translation.
+
+1. Fork the repository ([how?](https://help.github.com/en/github/getting-started-with-github/fork-a-repo))
+1. Create a branch for your work ([how?](https://help.github.com/en/desktop/contributing-to-projects/creating-a-branch-for-your-work)).
+1. Copy `en.ass` file to `$LANGUAGE.ass`. `$LANGUAGE` should be replaced with
+   [ISO 639-1 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes),
+   such as `en` for English, `th` for Thai.
+1. Translate subtitles in the file. You should not modify anything other than
+   subtitle texts!
+1. Commit the file ([how?](https://help.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line)).
+1. Push your branch ([how?](https://help.github.com/en/github/using-git/pushing-commits-to-a-remote-repository))
+1. Create a PR ([how?](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request))
+
+That's it! We will contact you after you create a PR.
